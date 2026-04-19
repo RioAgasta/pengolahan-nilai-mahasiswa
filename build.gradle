@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group = 'id.polban'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+// Menggunakan struktur standar Java/Gradle:
+//   src/main/java  → source production
+//   src/test/java  → source test
+
+dependencies {
+    // JUnit 5 (Jupiter) - test framework
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
+    testRuntimeOnly   'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+
+    // Diperlukan agar VS Code Java Test Runner bisa men-discover test JUnit 5
+    testRuntimeOnly   'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+test {
+    // Aktifkan JUnit Platform agar Gradle mengenali JUnit 5
+    useJUnitPlatform()
+
+    // Tampilkan output test di console
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
+    }
+}

@@ -23,3 +23,9 @@ Thumbs.db
 .vscode/
 .idea/
 *.iml
+
+# Gradle
+.gradle/
+gradle-dist/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
