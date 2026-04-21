@@ -16,10 +16,10 @@ public class Main {
 
   public static void main(String[] args) {
     Main app = new Main();
-    app.jalankan();
+    app.start();
   }
 
-  public void jalankan() {
+  public void start() {
     ui.tampilkanHeader();
 
     while (lanjut) {
