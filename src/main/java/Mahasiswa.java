@@ -1,4 +1,4 @@
-package pengolahannilai;
+package src.main.java;
 
 public class Mahasiswa {
 
