@@ -1,23 +1,23 @@
+package pengolahannilai;
+
 import java.util.Scanner;
 
-/**
- * ╔══════════════════════════════════════════════════════╗
- * ║      APLIKASI PENGOLAHAN NILAI MAHASISWA             ║
- * ║                                                      ║
- * ║  Arsitektur Modul:                                   ║
- * ║    Main          → Interface & loop menu             ║
- * ║    ProsesNilai   → Orkestrator modul                 ║
- * ║    InputData     → Modul input data                  ║
- * ║    Validasi      → Modul validasi data               ║
- * ║    Komputasi     → Modul hitung nilai, grade, status ║
- * ╚══════════════════════════════════════════════════════╝
- */
 public class Main {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        boolean lanjut = true;
+    private Scanner sc;
+    private boolean lanjut;
 
+    public Main() {
+        this.sc = new Scanner(System.in);
+        this.lanjut = true;
+    }
+
+    public static void main(String[] args) {
+        Main app = new Main();
+        app.jalankan();
+    }
+
+    public void jalankan() {
         tampilkanHeader();
 
         while (lanjut) {
@@ -28,8 +28,8 @@ public class Main {
 
             switch (pilihan) {
                 case "1":
-                    // Delegasikan ke ProsesNilai — Main hanya terima string hasil
-                    String hasil = ProsesNilai.proses(sc);
+                    PemrosesNilai pemroses = new PemrosesNilai(sc);
+                    String hasil = pemroses.proses();
                     System.out.println(hasil);
                     break;
 
@@ -46,8 +46,7 @@ public class Main {
         sc.close();
     }
 
-    // ── Tampilan banner pembuka ──────────────────────────────────────
-    private static void tampilkanHeader() {
+    private void tampilkanHeader() {
         System.out.println("\n  ================================================");
         System.out.println("     SISTEM PENGOLAHAN NILAI MAHASISWA  v1.0");
         System.out.println("  ================================================");
@@ -56,8 +55,7 @@ public class Main {
         System.out.println("  ================================================\n");
     }
 
-    // ── Tampilan loop menu ───────────────────────────────────────────
-    private static void tampilkanMenu() {
+    private void tampilkanMenu() {
         System.out.println("  ┌─────────────────────────────┐");
         System.out.println("  │           MENU UTAMA        │");
         System.out.println("  ├─────────────────────────────┤");
