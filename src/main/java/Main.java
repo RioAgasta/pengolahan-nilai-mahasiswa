@@ -72,7 +72,9 @@ public class Main {
   private String buildLaporan(String nama,
       double tugas, double uts, double uas,
       double nilaiAkhir, String grade, String status) {
-    String garis = "  " + "=".repeat(46);
+    StringBuilder garisBuilder = new StringBuilder("  ");
+    for (int i = 0; i < 46; i++) garisBuilder.append('=');
+    String garis = garisBuilder.toString();
     StringBuilder sb = new StringBuilder();
     sb.append("\n").append(garis).append("\n");
     sb.append("        HASIL PENGOLAHAN NILAI MAHASISWA\n");

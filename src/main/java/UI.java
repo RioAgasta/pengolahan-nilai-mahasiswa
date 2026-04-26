@@ -88,11 +88,11 @@ public class UI {
   }
 
   public void tampilkanMenu() {
-    System.out.println("  ┌─────────────────────────────┐");
-    System.out.println("  │           MENU UTAMA        │");
-    System.out.println("  ├─────────────────────────────┤");
-    System.out.println("  │  1. Input Nilai Mahasiswa   │");
-    System.out.println("  │  2. Keluar                  │");
-    System.out.println("  └─────────────────────────────┘");
+    System.out.println("  +-----------------------------+");
+    System.out.println("  |        MENU UTAMA           |");
+    System.out.println("  +--------------+--------------+");
+    System.out.println("  |  1. Input Nilai Mahasiswa   |");
+    System.out.println("  |  2. Keluar                  |");
+    System.out.println("  +-----------------------------+");
   }
 }
